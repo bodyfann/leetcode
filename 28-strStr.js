@@ -11,6 +11,17 @@ var strStr = function (haystack, needle) {
     if (haystack[i] == needle[0]) {
       index = i;
       for (let j = 1; j < needle.length; j++) {
+        console.log(
+          ".." +
+            needle[j] +
+            "(" +
+            j +
+            "), " +
+            haystack[i + j] +
+            "(" +
+            (i + j) +
+            ")"
+        );
         if (needle[j] != haystack[i + j]) {
           index = -1;
           break;
@@ -22,4 +33,4 @@ var strStr = function (haystack, needle) {
   return index;
 };
 
-console.log(strStr("", ""));
+console.log(strStr("hello", "ll"));
